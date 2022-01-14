@@ -316,8 +316,8 @@ RegisterNUICallback('doFingerScan', function(data)
     TriggerServerEvent('police:server:showFingerprintId', FingerPrintSessionId)
 end)
 
-RegisterNetEvent('police:client:SendEmergencyMessage', function(coords, message)
-    TriggerServerEvent("police:server:SendEmergencyMessage", coords, message)
+RegisterNetEvent('police:client:SendEmergencyMessage', function()
+    TriggerServerEvent('police:server:policeAlert', '| 10-99 | Officer in Distress')
     TriggerEvent("police:client:CallAnim")
 end)
 
